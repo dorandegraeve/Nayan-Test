@@ -3,14 +3,13 @@
         <h1 class="countdown__title">{{ title }}</h1>
         <h1 class="countdown__subtitle">{{ subtitle }}</h1>
         <Counter
-        
             :year="2022"
             :month="11"
-            :day="25"
-            :hour="0"
-            :minute="0"
-            :second="0"
-            :millisecond="0"
+            :day="22"
+            :hour="23"
+            :minute="59"
+            :second="59"
+            :millisecond="59"
         />
     </section>
 </template>
@@ -33,6 +32,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './Countdown.scss';
 @import '../../scss/main.scss';
+@import './Countdown.scss';
 </style>
