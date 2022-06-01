@@ -1,0 +1,111 @@
+.newsletter{
+    margin: 0 auto;
+    padding: 5rem 0;
+    max-width: $grid-width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title{
+        margin-bottom: 2.5rem;
+    }
+
+
+    &__text{
+        width: 70%;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    &__valid{
+        background-color: lighten($green, 20%);
+        color: $green;
+        position: absolute;
+        padding: 2.5rem;
+        bottom: -7rem;
+        border-radius: 5px;
+        transition: 2s;
+    }
+
+    &__invalid{
+        background-color: lighten($red, 30%);
+        color: $red;
+        position: absolute;
+        padding: 2.5rem;
+        bottom: -7rem;
+        border-radius: 5px;
+    }
+
+    form{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    &__input{
+        background-color: $gray;
+        padding: 1rem;
+        width: 15rem;
+        
+        &::placeholder{
+            color: darken($gray, 20%);
+            font-size: 1.1rem;
+        }
+
+        &:focus{
+            outline-offset: -1px;
+            outline: darken($gray, 20%) solid 1px;
+        }
+
+        &--valid{
+            background-color: lighten($green, 20%);
+            &:focus{
+                outline: $green solid 1px;
+            }
+        }
+
+        &--invalid{
+            background-color: lighten($red, 20%);
+            &:focus{
+                outline: $red solid 1px;
+            }
+        }
+    }
+
+    &__button{
+        background-color: $black;
+        color: $white;
+        font-size: 1.4rem;
+        width: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        &:hover{
+            cursor: pointer;
+            background-color: lighten($black, 15%);
+        }
+    }
+
+}
+
+.close{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 3px;
+    right: 3px;
+    cursor: pointer;
+    z-index: 5;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+input, button{
+    all: unset
+}
