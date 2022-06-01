@@ -28,7 +28,7 @@ export default {
     //computed property is used for complex logic that includes reactive data
     computed: {
         _seconds: () => 1000, //1000 milliseconds
-        //this points to the component
+        //.this points to the component
         _minutes() {
             return this._seconds * 60;
         },
@@ -91,6 +91,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './Counter.scss';
 @import '../../scss/main.scss';
+@import './Counter.scss';
 </style>
