@@ -1,0 +1,7 @@
+.underline{
+    border-bottom: 2px solid #e6e6e6;
+    padding-bottom: 5rem;
+    @include respond(tab-port) {
+        border-bottom: none;
+    }
+}
