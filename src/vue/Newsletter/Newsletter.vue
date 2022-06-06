@@ -35,28 +35,37 @@ export default {
         };
     },
     methods: {
-        submitForm() {
+        async submitForm() {
             // console.log('Email: ' + this.email);
-
-            fetch('http://localhost:8080/api/newsletter', {
+    
+           const res = await fetch('http://localhost:8080/api/newsletter', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 //property: emailAddress
                 body: JSON.stringify({ emailAddress: this.email })
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    console.log(data);
-                    if (data.success === false && data.errorMessage === 'EXISTING_USER') {
+            });
+            const data = await res.json();
+            console.log(data);
+                if (data.success === false && data.errorMessage === 'EXISTING_USER') {
                         this.validateInput('invalid');
                         // console.log(this.emailValidity);
                     } else if(data.success === true) {
                         this.validateInput('valid')
                         // console.log(this.emailValidity);
                     }
-                });
+                // .then((res) => res.json())
+                // .then((data) => {
+                //     console.log(data);
+                //     if (data.success === false && data.errorMessage === 'EXISTING_USER') {
+                //         this.validateInput('invalid');
+                //         // console.log(this.emailValidity);
+                //     } else if(data.success === true) {
+                //         this.validateInput('valid')
+                //         // console.log(this.emailValidity);
+                //     }
+                // });
         },
 
 
@@ -68,6 +77,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../scss/main.scss';
+@import '../../scss/abstracts/mixins';
+@import '../../scss/abstracts/variables';
 @import './Newsletter.scss';
 </style>
