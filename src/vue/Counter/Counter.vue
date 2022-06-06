@@ -12,6 +12,7 @@
         <div class="counter__number">
             {{ displaySeconds }}<span class="countdown__number-description">Sec</span>
         </div>
+        
     </div>
 </template>
 
@@ -41,14 +42,15 @@ export default {
         end() {
             return new Date(
                 this.year,
-                this.month,
-                this.day,
+                this.month - 1,
+                this.day - 1,
                 this.hour,
                 this.minute,
                 this.second,
                 this.millisecond
             );
-        }
+        },
+        
     },
     //run the methods
     mounted() {
@@ -64,8 +66,7 @@ export default {
             const timer = setInterval(() => {
                 const now = new Date();
                 const distance = this.end.getTime() - now.getTime();
-
-
+                
                 if (distance < 0) {
                     clearInterval(timer);
                     return;
@@ -84,6 +85,7 @@ export default {
                 this.displaySeconds = this.formatNumber(seconds);
                 this.displayHours = this.formatNumber(hours);
                 this.displayDays = this.formatNumber(days);
+               
             });
         }
     }
@@ -91,6 +93,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../scss/main.scss';
+@import '../../scss/abstracts/mixins';
+@import '../../scss/abstracts/variables';
 @import './Counter.scss';
 </style>
