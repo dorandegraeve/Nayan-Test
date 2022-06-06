@@ -18,6 +18,7 @@
 
     @include clearfix;
 
+    // this selects all elements of wich the class attribute start with "col-"
     [class^="col-"] {
         float: left;
 

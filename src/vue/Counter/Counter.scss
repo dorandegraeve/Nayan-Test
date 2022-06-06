@@ -2,20 +2,20 @@
     display: flex;
     &__number{
         width: 25%;
-        margin: 25px 10px;
-        padding: 10px;
+        margin: 2.5rem 1rem;
+        padding: 1rem;
         background-color: white;
         color: black;
         position: relative;
-        font-size: 16px;
         font-weight: 600;
+        font-size: 1.8rem;
         span{
             position: absolute;
-            bottom: -25px;
+            bottom: -2.5rem;
             left: 50%;
             transform: translateX(-50%);
             color: white;
-            font-size: 12px;
+            font-size: 1.2rem;
         }
     }
 }

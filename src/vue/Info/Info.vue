@@ -50,6 +50,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../scss/main.scss';
+@import '../../scss/abstracts/mixins';
+@import '../../scss/abstracts/variables';
 @import './Info.scss';
 </style>

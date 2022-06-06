@@ -1,3 +1,5 @@
+//height of grid collapses because of the childrens float values, this clearfix css "hack" fixes this
+
 @mixin clearfix {
     &::after {
         content: "";
